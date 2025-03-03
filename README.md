@@ -1,126 +1,97 @@
-LegalGPT: LLM-based Legal ChatBot
+# LegalGPT: LLM-based Legal ChatBot
 
- 
+![Python 3.12](https://img.shields.io/badge/Python-3.10-brightgreen.svg) [![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)  
 
-LegalGPT is a Large Language Model (LLM) based chatbot designed to provide legal information. The chatbot utilizes RAG architecture, advanced language models, and embeddings to retrieve and generate contextually relevant answers from a provided legal document corpus. This project specifically focuses on the Indian Penal Code and other related legal documents.
+LegalGPT is a Large Language Model (LLM) based chatbot designed to provide legal information. The chatbot utilizes RAG architecture, advanced language models and embeddings to retrieve and generate contextually relevant answers from a provided legal document corpus. This project specifically focuses on the Indian Penal Code and other related legal documents.
 
-Table of Contents
+## Table of Contents
 
-Introduction
+- [Introduction](#introduction)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Deployed Website](#deployed-website)
 
-Features
 
-Architecture
-
-Setup and Installation
-
-Usage
-
-Deployed Website
-
-Future Enhancements
-
-Introduction
+## Introduction
 
 LegalGPT aims to assist users by providing accurate and concise legal information based on the Indian Penal Code and related legal documents. The chatbot retrieves relevant context from the knowledge base to answer user queries efficiently.
 
-Features
+## Features
 
-Conversational interface for querying legal information
+- Conversational interface for querying legal information
+- Uses FAISS for efficient vector search
+- Embeds documents using Google Generative AI Embeddings
+- Handles large document sets by splitting and batching
+- Provides sources for retrieved information
 
-Uses FAISS for efficient vector search
-
-Embeds documents using Google Generative AI Embeddings
-
-Handles large document sets by splitting and batching
-
-Provides sources for retrieved information
-
-Deployed online for easy access
-
-Memory buffer to maintain conversation history
-
-Architecture
+## Architecture
 
 The architecture of LegalGPT includes the following components:
 
-Document Loader: Loads legal documents from a directory of PDF files.
+1. **Document Loader**: Loads legal documents from a directory of PDF files.
+2. **Text Splitter**: Splits documents into manageable chunks for embedding.
+3. **Embeddings**: Uses Google Generative AI Embeddings to transform text into vector representations.
+4. **Vector Store**: Utilizes FAISS to store and retrieve document embeddings.
+5. **LLM**: Uses the ChatGroq API to generate responses based on retrieved documents and user queries.
+6. **Memory**: Maintains a conversation buffer to provide context in conversations.
 
-Text Splitter: Splits documents into manageable chunks for embedding.
+## Setup and Installation
 
-Embeddings: Uses Google Generative AI Embeddings to transform text into vector representations.
+### Prerequisites
 
-Vector Store: Utilizes FAISS to store and retrieve document embeddings.
+- Python 3.10
+- [Streamlit](https://streamlit.io/)
+- [LangChain Community](https://github.com/langchain-ai/langchain-community)
+- [Google Generative AI](https://github.com/google-research/google-research/tree/master/large-scale-causal-ml)
+- [FAISS](https://github.com/facebookresearch/faiss)
 
-LLM: Uses the ChatGroq API to generate responses based on retrieved documents and user queries.
+### Installation Steps
 
-Memory: Maintains a conversation buffer to provide context in conversations.
+1. **Clone the Repository**
 
-Web Interface: Built using Streamlit for user-friendly interaction.
+```bash
+   git clone https://github.com/yourusername/Legalgpt.git
+   cd Legalgpt
+```
 
-Setup and Installation
+2.  **Set Up and Activate Virtual Environment**
 
-Prerequisites
-
-Python 3.10
-
-Streamlit
-
-LangChain Community
-
-Google Generative AI
-
-FAISS
-
-Installation Steps
-
-Clone the Repository
-
-   git clone https://github.com/yourusername/lawgpt.git
-   cd legalgpt
-
-Set Up and Activate Virtual Environment
-
-    conda create -p venv python==3.10
+```bash
+    conda create -p venv python==3.12
     conda activate C:\directory\venv
+```
 
-Install Dependencies
+3. **Install Dependencies**
 
+```bash
     pip install -r requirements.txt
+```
 
-Set Up Environment Variables
+4. **Set Up Environment Variables**
 
 Create a .env file in the project root directory and add your API keys:
-
+```bash
     GOOGLE_API_KEY=your_google_api_key
     GROQ_API_KEY=your_groq_api_key
+```
 
-Split, Embed and Save Documents
+5. **Split, Embed and Save Documents**
 
 Run the following script to load, split, embed, and save your legal documents:
-
+```bash
     python ingestion.py
+```
 
-Usage
+## Usage
+Run the Streamlit Application
 
-Run the Streamlit Application:
-
+```bash
 streamlit run app.py
-
-Deployed Website
+```
+## Deployed Website
 
 LegalGPT is also deployed on Streamlit Cloud. You can access the chatbot directly via the following link:
 
-🔗 LegalGPT Chatbot
-
-Future Enhancements
-
-Multilingual Support: Add support for regional languages for better accessibility.
-
-Enhanced UI/UX: Improve the chatbot interface for better usability.
-
-More Legal Domains: Expand beyond the Indian Penal Code to include civil, corporate, and tax law.
-
-User Authentication: Implement authentication for personalized responses.
-
-Chat History & Export: Allow users to save and download chat history.
+[LegalGPT/](https://harsha-legalgpt.streamlit.app//)
