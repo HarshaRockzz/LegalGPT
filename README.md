@@ -40,24 +40,24 @@ The architecture of LegalGPT includes the following components:
 ### Prerequisites
 
 - Python 3.10
-- [Streamlit](https://streamlit.io/)
-- [LangChain Community](https://github.com/langchain-ai/langchain-community)
-- [Google Generative AI](https://github.com/google-research/google-research/tree/master/large-scale-causal-ml)
-- [FAISS](https://github.com/facebookresearch/faiss)
+- Streamlit
+- LangChain Community
+- Google Generative AI
+- FAISS
 
 ### Installation Steps
 
 1. **Clone the Repository**
 
 ```bash
-   git clone https://github.com/yourusername/Legalgpt.git
+   git clone https://github.com/HarshaRockzz/LegalGPT.git
    cd Legalgpt
 ```
 
 2.  **Set Up and Activate Virtual Environment**
 
 ```bash
-    conda create -p venv python==3.12
+    conda create -p venv python==3.10
     conda activate C:\directory\venv
 ```
 
